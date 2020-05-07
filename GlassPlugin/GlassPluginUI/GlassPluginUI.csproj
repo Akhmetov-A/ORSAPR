@@ -80,9 +80,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GlassDesign\GlassDesign.csproj">
+    <ProjectReference Include="..\GlassBuilder\GlassBuilder.csproj">
+      <Project>{2aa55422-b00b-4115-8321-ab5525d10df6}</Project>
+      <Name>GlassBuilder</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GlassParameters\GlassParameters.csproj">
       <Project>{2583f33a-3183-4b76-afbd-1d923e73e4ea}</Project>
-      <Name>GlassDesign</Name>
+      <Name>GlassParameters</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

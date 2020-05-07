@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlassDesign", "GlassDesign\GlassDesign.csproj", "{2583F33A-3183-4B76-AFBD-1D923E73E4EA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlassParameters", "GlassParameters\GlassParameters.csproj", "{2583F33A-3183-4B76-AFBD-1D923E73E4EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlassDesignUI", "GlassDesignUI\GlassDesignUI.csproj", "{23C2E7DC-9DB8-414F-BE0B-481F184C8346}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlassPluginUI", "GlassPluginUI\GlassPluginUI.csproj", "{23C2E7DC-9DB8-414F-BE0B-481F184C8346}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlassBuilder", "GlassBuilder\GlassBuilder.csproj", "{2AA55422-B00B-4115-8321-AB5525D10DF6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,11 +23,15 @@ Global
 		{23C2E7DC-9DB8-414F-BE0B-481F184C8346}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23C2E7DC-9DB8-414F-BE0B-481F184C8346}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23C2E7DC-9DB8-414F-BE0B-481F184C8346}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AA55422-B00B-4115-8321-AB5525D10DF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AA55422-B00B-4115-8321-AB5525D10DF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AA55422-B00B-4115-8321-AB5525D10DF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AA55422-B00B-4115-8321-AB5525D10DF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {A2A49E52-8209-4F95-A6E1-343281E701BF}
+		SolutionGuid = {5E7EE086-E011-4C03-AB7B-CA2A48BBCDC2}
 	EndGlobalSection
 EndGlobal

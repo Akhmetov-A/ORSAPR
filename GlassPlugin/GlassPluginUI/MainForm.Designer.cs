@@ -1,4 +1,4 @@
-﻿namespace GlassDesignUI
+﻿namespace GlassPluginUI
 {
     partial class MainForm
     {
@@ -91,6 +91,7 @@
             this.D1TextBox.Name = "D1TextBox";
             this.D1TextBox.Size = new System.Drawing.Size(102, 22);
             this.D1TextBox.TabIndex = 3;
+            this.D1TextBox.TextChanged += new System.EventHandler(this.D1TextBox_TextChanged);
             // 
             // D2TextBox
             // 
@@ -100,6 +101,7 @@
             this.D2TextBox.Name = "D2TextBox";
             this.D2TextBox.Size = new System.Drawing.Size(102, 22);
             this.D2TextBox.TabIndex = 4;
+            this.D2TextBox.TextChanged += new System.EventHandler(this.D2TextBox_TextChanged);
             // 
             // D3TextBox
             // 
@@ -109,6 +111,7 @@
             this.D3TextBox.Name = "D3TextBox";
             this.D3TextBox.Size = new System.Drawing.Size(102, 22);
             this.D3TextBox.TabIndex = 5;
+            this.D3TextBox.TextChanged += new System.EventHandler(this.D3TextBox_TextChanged);
             // 
             // H1TextBox
             // 
@@ -118,6 +121,7 @@
             this.H1TextBox.Name = "H1TextBox";
             this.H1TextBox.Size = new System.Drawing.Size(102, 22);
             this.H1TextBox.TabIndex = 6;
+            this.H1TextBox.TextChanged += new System.EventHandler(this.H1TextBox_TextChanged);
             // 
             // D4TextBox
             // 
@@ -127,6 +131,7 @@
             this.D4TextBox.Name = "D4TextBox";
             this.D4TextBox.Size = new System.Drawing.Size(102, 22);
             this.D4TextBox.TabIndex = 7;
+            this.D4TextBox.TextChanged += new System.EventHandler(this.D4TextBox_TextChanged);
             // 
             // H2TextBox
             // 
@@ -136,6 +141,7 @@
             this.H2TextBox.Name = "H2TextBox";
             this.H2TextBox.Size = new System.Drawing.Size(102, 22);
             this.H2TextBox.TabIndex = 8;
+            this.H2TextBox.TextChanged += new System.EventHandler(this.H2TextBox_TextChanged);
             // 
             // D5TextBox
             // 
@@ -145,6 +151,7 @@
             this.D5TextBox.Name = "D5TextBox";
             this.D5TextBox.Size = new System.Drawing.Size(102, 22);
             this.D5TextBox.TabIndex = 9;
+            this.D5TextBox.TextChanged += new System.EventHandler(this.D5TextBox_TextChanged);
             // 
             // H3TextBox
             // 
@@ -154,6 +161,7 @@
             this.H3TextBox.Name = "H3TextBox";
             this.H3TextBox.Size = new System.Drawing.Size(102, 22);
             this.H3TextBox.TabIndex = 10;
+            this.H3TextBox.TextChanged += new System.EventHandler(this.H3TextBox_TextChanged);
             // 
             // H1Label
             // 
@@ -289,6 +297,7 @@
             this.RefreshButton.TabIndex = 17;
             this.RefreshButton.Text = "Сбросить";
             this.RefreshButton.UseVisualStyleBackColor = true;
+            this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
             // 
             // BuildButton
             // 
@@ -299,6 +308,7 @@
             this.BuildButton.TabIndex = 18;
             this.BuildButton.Text = "Построить";
             this.BuildButton.UseVisualStyleBackColor = true;
+            this.BuildButton.Click += new System.EventHandler(this.BuildButton_Click);
             // 
             // MainForm
             // 

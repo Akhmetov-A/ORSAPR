@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GlassDesignUI.Properties
+namespace GlassPluginUI.Properties
 {
 
 
