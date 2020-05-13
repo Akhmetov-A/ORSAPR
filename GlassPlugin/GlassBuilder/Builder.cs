@@ -57,18 +57,44 @@ namespace GlassBuilder
 
             //Построение 2D эскиза
             var sketchEdit = (ksDocument2D)definitionSketch.BeginEdit();
-            sketchEdit.ksLineSeg(0, 0, standRadius, 0, 1);
-            sketchEdit.ksLineSeg(0, 2, standRadius, 2, 1);
-            sketchEdit.ksLineSeg(standRadius, 0, standRadius, 2, 1);
-            sketchEdit.ksLineSeg(legRadius, 2, legRadius, legHeight+2, 1);
+            sketchEdit.ksLineSeg(0, 0, -standRadius, 0, 1);
+            sketchEdit.ksLineSeg(-(legRadius + roundingRadius), -5, -standRadius, -5, 1);
+            sketchEdit.ksLineSeg(-standRadius, 0, -standRadius, -5, 1);
+            sketchEdit.ksLineSeg(-legRadius, -(5 + roundingRadius), -legRadius, -legHeight - 5, 1);
+
             //Скругление
-            ksCornerParam ksCornerParam = (ksCornerParam)sketchEdit.GetDocument2DNotify();
-            ksCornerParam.index = 1;
-            ksCornerParam.fillet = true;
-            ksCornerParam.l1 = roundingRadius;
-            //Построение бокала
+            var supportingCurve = sketchEdit.ksCircle(-legRadius - roundingRadius, -(5 + roundingRadius), roundingRadius, 1);
+            sketchEdit.ksTrimmCurve(supportingCurve, -legRadius, -(5 + roundingRadius), -(legRadius + roundingRadius), -5,
+                -(legRadius + roundingRadius - roundingRadius), -(5 + roundingRadius - roundingRadius), 1);
+
             //Построение нижнего бокала
+            sketchEdit.ksNurbs(3, false, 1);
+            sketchEdit.ksPoint(-legRadius, -(5 + legHeight), 0);
+            sketchEdit.ksPoint(-(glassRadius + legRadius)*0.7, -(5+legHeight+lowerGlassHeight)*0.7, 0);
+            sketchEdit.ksPoint(-glassRadius, -(5 + lowerGlassHeight + legHeight), 0);
+            sketchEdit.ksEndObj();
+
             //Построение верхнего бокала
+            sketchEdit.ksNurbs(3, false, 1);
+            sketchEdit.ksPoint(-glassRadius, -(5 + lowerGlassHeight + legHeight), 0);
+            sketchEdit.ksPoint(-(glassRadius+glassNeckRadius)*0.6, -(5 + legHeight + lowerGlassHeight + upperGlassHeight)*0.8, 0);
+            sketchEdit.ksPoint(-glassNeckRadius, -(5 + legHeight + lowerGlassHeight + upperGlassHeight), 0);
+            sketchEdit.ksEndObj();
+
+            //Построение оси вращения
+            sketchEdit.ksLineSeg(0, 0, 0, -10, 3);
+            definitionSketch.EndEdit();
+
+            //Вращение
+            ksEntity rotatedEntity = part.NewEntity((short)Obj3dType.o3d_bossRotated);
+            ksBossRotatedDefinition rotatedDefinition = rotatedEntity.GetDefinition();
+            ksRotatedParam rotatedParam = (ksRotatedParam)rotatedDefinition.RotatedParam();
+            rotatedParam.toroidShape = true;
+            rotatedDefinition.SetThinParam(true);
+            rotatedDefinition.toroidShapeType = true;
+            rotatedDefinition.SetSketch(sketch);
+            rotatedEntity.Create();
+
         }
     }
 }

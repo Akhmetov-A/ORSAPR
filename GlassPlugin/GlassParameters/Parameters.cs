@@ -80,7 +80,7 @@ namespace GlassParameters
             {
                 if (value < 10 || value > 30) 
                 {
-                    throw new ArgumentException("Диаметр скругление должен быть от 10 до 30 мм");
+                    throw new ArgumentException("Диаметр скругления должен быть от 10 до 30 мм");
                 }
                 else
                 {

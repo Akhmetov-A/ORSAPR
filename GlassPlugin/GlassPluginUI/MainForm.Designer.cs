@@ -54,6 +54,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.RefreshButton = new System.Windows.Forms.Button();
             this.BuildButton = new System.Windows.Forms.Button();
+            this.defaultBuildButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // D1Label
@@ -89,7 +90,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.D1TextBox.Location = new System.Drawing.Point(232, 10);
             this.D1TextBox.Name = "D1TextBox";
-            this.D1TextBox.Size = new System.Drawing.Size(102, 22);
+            this.D1TextBox.Size = new System.Drawing.Size(152, 22);
             this.D1TextBox.TabIndex = 3;
             this.D1TextBox.TextChanged += new System.EventHandler(this.D1TextBox_TextChanged);
             // 
@@ -99,7 +100,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.D2TextBox.Location = new System.Drawing.Point(232, 39);
             this.D2TextBox.Name = "D2TextBox";
-            this.D2TextBox.Size = new System.Drawing.Size(102, 22);
+            this.D2TextBox.Size = new System.Drawing.Size(152, 22);
             this.D2TextBox.TabIndex = 4;
             this.D2TextBox.TextChanged += new System.EventHandler(this.D2TextBox_TextChanged);
             // 
@@ -109,7 +110,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.D3TextBox.Location = new System.Drawing.Point(232, 68);
             this.D3TextBox.Name = "D3TextBox";
-            this.D3TextBox.Size = new System.Drawing.Size(102, 22);
+            this.D3TextBox.Size = new System.Drawing.Size(152, 22);
             this.D3TextBox.TabIndex = 5;
             this.D3TextBox.TextChanged += new System.EventHandler(this.D3TextBox_TextChanged);
             // 
@@ -119,7 +120,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.H1TextBox.Location = new System.Drawing.Point(232, 97);
             this.H1TextBox.Name = "H1TextBox";
-            this.H1TextBox.Size = new System.Drawing.Size(102, 22);
+            this.H1TextBox.Size = new System.Drawing.Size(152, 22);
             this.H1TextBox.TabIndex = 6;
             this.H1TextBox.TextChanged += new System.EventHandler(this.H1TextBox_TextChanged);
             // 
@@ -129,7 +130,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.D4TextBox.Location = new System.Drawing.Point(232, 126);
             this.D4TextBox.Name = "D4TextBox";
-            this.D4TextBox.Size = new System.Drawing.Size(102, 22);
+            this.D4TextBox.Size = new System.Drawing.Size(152, 22);
             this.D4TextBox.TabIndex = 7;
             this.D4TextBox.TextChanged += new System.EventHandler(this.D4TextBox_TextChanged);
             // 
@@ -139,7 +140,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.H2TextBox.Location = new System.Drawing.Point(232, 155);
             this.H2TextBox.Name = "H2TextBox";
-            this.H2TextBox.Size = new System.Drawing.Size(102, 22);
+            this.H2TextBox.Size = new System.Drawing.Size(152, 22);
             this.H2TextBox.TabIndex = 8;
             this.H2TextBox.TextChanged += new System.EventHandler(this.H2TextBox_TextChanged);
             // 
@@ -149,7 +150,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.D5TextBox.Location = new System.Drawing.Point(232, 183);
             this.D5TextBox.Name = "D5TextBox";
-            this.D5TextBox.Size = new System.Drawing.Size(102, 22);
+            this.D5TextBox.Size = new System.Drawing.Size(152, 22);
             this.D5TextBox.TabIndex = 9;
             this.D5TextBox.TextChanged += new System.EventHandler(this.D5TextBox_TextChanged);
             // 
@@ -159,7 +160,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.H3TextBox.Location = new System.Drawing.Point(232, 211);
             this.H3TextBox.Name = "H3TextBox";
-            this.H3TextBox.Size = new System.Drawing.Size(102, 22);
+            this.H3TextBox.Size = new System.Drawing.Size(152, 22);
             this.H3TextBox.TabIndex = 10;
             this.H3TextBox.TextChanged += new System.EventHandler(this.H3TextBox_TextChanged);
             // 
@@ -212,7 +213,7 @@
             // 
             this.mmLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.mmLabel.AutoSize = true;
-            this.mmLabel.Location = new System.Drawing.Point(340, 13);
+            this.mmLabel.Location = new System.Drawing.Point(390, 13);
             this.mmLabel.Name = "mmLabel";
             this.mmLabel.Size = new System.Drawing.Size(26, 17);
             this.mmLabel.TabIndex = 16;
@@ -222,7 +223,7 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(340, 42);
+            this.label1.Location = new System.Drawing.Point(390, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(26, 17);
             this.label1.TabIndex = 16;
@@ -232,7 +233,7 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(340, 71);
+            this.label2.Location = new System.Drawing.Point(390, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 17);
             this.label2.TabIndex = 16;
@@ -242,7 +243,7 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(340, 100);
+            this.label3.Location = new System.Drawing.Point(390, 100);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(26, 17);
             this.label3.TabIndex = 16;
@@ -252,7 +253,7 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(340, 129);
+            this.label4.Location = new System.Drawing.Point(390, 129);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(26, 17);
             this.label4.TabIndex = 16;
@@ -262,7 +263,7 @@
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(340, 158);
+            this.label5.Location = new System.Drawing.Point(390, 158);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(26, 17);
             this.label5.TabIndex = 16;
@@ -272,7 +273,7 @@
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(340, 186);
+            this.label6.Location = new System.Drawing.Point(390, 186);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(26, 17);
             this.label6.TabIndex = 16;
@@ -282,7 +283,7 @@
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(340, 214);
+            this.label7.Location = new System.Drawing.Point(390, 214);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(26, 17);
             this.label7.TabIndex = 16;
@@ -291,9 +292,9 @@
             // RefreshButton
             // 
             this.RefreshButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.RefreshButton.Location = new System.Drawing.Point(180, 253);
+            this.RefreshButton.Location = new System.Drawing.Point(42, 259);
             this.RefreshButton.Name = "RefreshButton";
-            this.RefreshButton.Size = new System.Drawing.Size(87, 27);
+            this.RefreshButton.Size = new System.Drawing.Size(100, 27);
             this.RefreshButton.TabIndex = 17;
             this.RefreshButton.Text = "Сбросить";
             this.RefreshButton.UseVisualStyleBackColor = true;
@@ -302,19 +303,30 @@
             // BuildButton
             // 
             this.BuildButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BuildButton.Location = new System.Drawing.Point(273, 253);
+            this.BuildButton.Location = new System.Drawing.Point(284, 259);
             this.BuildButton.Name = "BuildButton";
-            this.BuildButton.Size = new System.Drawing.Size(97, 27);
+            this.BuildButton.Size = new System.Drawing.Size(100, 27);
             this.BuildButton.TabIndex = 18;
             this.BuildButton.Text = "Построить";
             this.BuildButton.UseVisualStyleBackColor = true;
             this.BuildButton.Click += new System.EventHandler(this.BuildButton_Click);
             // 
+            // defaultBuildButton
+            // 
+            this.defaultBuildButton.Location = new System.Drawing.Point(148, 259);
+            this.defaultBuildButton.Name = "defaultBuildButton";
+            this.defaultBuildButton.Size = new System.Drawing.Size(130, 27);
+            this.defaultBuildButton.TabIndex = 19;
+            this.defaultBuildButton.Text = "По умолчанию";
+            this.defaultBuildButton.UseVisualStyleBackColor = true;
+            this.defaultBuildButton.Click += new System.EventHandler(this.defaultBuildButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 298);
+            this.ClientSize = new System.Drawing.Size(432, 298);
+            this.Controls.Add(this.defaultBuildButton);
             this.Controls.Add(this.BuildButton);
             this.Controls.Add(this.RefreshButton);
             this.Controls.Add(this.label7);
@@ -341,7 +353,8 @@
             this.Controls.Add(this.D3Label);
             this.Controls.Add(this.D2Label);
             this.Controls.Add(this.D1Label);
-            this.MinimumSize = new System.Drawing.Size(400, 345);
+            this.MaximumSize = new System.Drawing.Size(450, 345);
+            this.MinimumSize = new System.Drawing.Size(450, 345);
             this.Name = "MainForm";
             this.ShowIcon = false;
             this.Text = "Рюмка";
@@ -378,6 +391,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button RefreshButton;
         private System.Windows.Forms.Button BuildButton;
+        private System.Windows.Forms.Button defaultBuildButton;
     }
 }
 

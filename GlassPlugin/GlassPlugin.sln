@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlassPluginUI", "GlassPlugi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlassBuilder", "GlassBuilder\GlassBuilder.csproj", "{2AA55422-B00B-4115-8321-AB5525D10DF6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlassPlugin.UnitTests", "GlassPlugin.UnitTests\GlassPlugin.UnitTests.csproj", "{A4E65ED6-9A7A-4D58-8FA2-76E4FBBE8430}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{2AA55422-B00B-4115-8321-AB5525D10DF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AA55422-B00B-4115-8321-AB5525D10DF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AA55422-B00B-4115-8321-AB5525D10DF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4E65ED6-9A7A-4D58-8FA2-76E4FBBE8430}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4E65ED6-9A7A-4D58-8FA2-76E4FBBE8430}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4E65ED6-9A7A-4D58-8FA2-76E4FBBE8430}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4E65ED6-9A7A-4D58-8FA2-76E4FBBE8430}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
