@@ -32,14 +32,7 @@ namespace GlassParameters
 
             set
             {
-                if (value < 100 || value > 180) 
-                {
-                    throw new ArgumentException("Диаметр подставки должен быть от 100 до 180 мм");
-                }
-                else
-                {
-                    _standDiameter = value;
-                }
+                _standDiameter = Condition(value, 100, 180, "\"диаметр подставки\"");
             }
         }
 
@@ -55,14 +48,7 @@ namespace GlassParameters
 
             set
             {
-                if (value < 10 || value > 20)
-                {
-                    throw new ArgumentException("Диаметр ножки должен быть от 10 до 20 мм");
-                }
-                else
-                {
-                    _legDiameter = value;
-                }
+                _legDiameter = Condition(value, 10, 20, "\"диаметр ножки\"");
             }
         }
 
@@ -78,14 +64,7 @@ namespace GlassParameters
 
             set
             {
-                if (value < 10 || value > 30) 
-                {
-                    throw new ArgumentException("Диаметр скругления должен быть от 10 до 30 мм");
-                }
-                else
-                {
-                    _roundingDiameter = value;
-                }
+                _roundingDiameter = Condition(value, 10, 30, "\"диаметр скругления\"");
             }
         }
 
@@ -101,14 +80,7 @@ namespace GlassParameters
 
             set
             {
-                if (value < 100 || value > 200)
-                {
-                    throw new ArgumentException("Высота ножки должна быть от 100 до 200 мм");
-                }
-                else
-                {
-                    _legHeight = value;
-                }
+                _legHeight = Condition(value, 100, 200, "\"высота ножки\"");
             }
         }
 
@@ -124,14 +96,7 @@ namespace GlassParameters
 
             set
             {
-                if (value < 100 || value > 250)
-                {
-                    throw new ArgumentException("Диаметр бокала должен быть от 100 до 250 мм");
-                }
-                else
-                {
-                    _glassDiameter = value;
-                }
+                _glassDiameter = Condition(value, 100, 250, "\"диаметр бокала\"");
             }
         }
 
@@ -147,14 +112,7 @@ namespace GlassParameters
 
             set
             {
-                if (value < 100 || value > 200)
-                {
-                    throw new ArgumentException("Высота нижнего бокала должна быть от 100 до 200 мм");
-                }
-                else
-                {
-                    _lowerGlassHeight = value;
-                }
+                _lowerGlassHeight = Condition(value, 100, 200, "\"высота нижнего бокала\"");
             }
         }
 
@@ -170,14 +128,7 @@ namespace GlassParameters
 
             set
             {
-                if (value < 100 || value > 180)
-                {
-                    throw new ArgumentException("Диаметр горлышка должен быть от 100 до 180 мм");
-                }
-                else
-                {
-                    _glassNeckDiameter = value;
-                }
+                _glassNeckDiameter = Condition(value, 100, 180, "\"диаметр горлышка\"");
             }          
         }
 
@@ -193,17 +144,29 @@ namespace GlassParameters
 
             set
             {
-                if (value < 100 || value > 200)
-                {
-                    throw new ArgumentException("Высота верхнего бокала должна быть от 100 до 200 мм");
-                }
-                else
-                {
-                    _upperGlassHeight = value;
-                }
+                _upperGlassHeight = Condition(value, 100, 200, "\"высота верхнего бокала\"");
             }
         }
 
+        /// <summary>
+        /// Условие для свойств
+        /// </summary>
+        /// <param name="parameter">параметр</param>
+        /// <param name="minValue">минимальное значение</param>
+        /// <param name="maxValue">максимальное значение</param>
+        /// <param name="name">имя параметра</param>
+        /// <returns></returns>
+        public int Condition(int parameter, int minValue, int maxValue, string name)
+        {
+            if (parameter < minValue || parameter > maxValue) 
+            {
+                throw new ArgumentException("Значение параметра " + name + " должно быть от " + minValue + " до " + maxValue + " мм");
+            }
+            else
+            {
+                return parameter;
+            }
+        }
 
     }
 }

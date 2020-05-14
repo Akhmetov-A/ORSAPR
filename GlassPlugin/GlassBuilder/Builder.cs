@@ -23,7 +23,7 @@ namespace GlassBuilder
         /// <summary>
         /// Параметризированный конструктор
         /// </summary>
-        /// <param name="kompas"></param>
+        /// <param name="kompas">объект компас</param>
         public Builder(KompasObject kompas)
         {
             _kompas = kompas;
@@ -34,7 +34,7 @@ namespace GlassBuilder
         /// <summary>
         /// Построение модели
         /// </summary>
-        /// <param name="parameters"></param>
+        /// <param name="parameters">входные параметры</param>
         public void CreateModel(Parameters parameters)
         {
             int standRadius = parameters.StandDiameter / 2;
@@ -57,10 +57,13 @@ namespace GlassBuilder
 
             //Построение 2D эскиза
             var sketchEdit = (ksDocument2D)definitionSketch.BeginEdit();
+
+            //Построение подставки и ножки
             sketchEdit.ksLineSeg(0, 0, -standRadius, 0, 1);
             sketchEdit.ksLineSeg(-(legRadius + roundingRadius), -5, -standRadius, -5, 1);
             sketchEdit.ksLineSeg(-standRadius, 0, -standRadius, -5, 1);
-            sketchEdit.ksLineSeg(-legRadius, -(5 + roundingRadius), -legRadius, -legHeight - 5, 1);
+            sketchEdit.ksLineSeg(-legRadius, -(5 + roundingRadius), -legRadius, -(5+legHeight), 1);
+            sketchEdit.ksLineSeg(0, -(5 + legHeight), -legRadius, -(5 + legHeight), 1);
 
             //Скругление
             var supportingCurve = sketchEdit.ksCircle(-legRadius - roundingRadius, -(5 + roundingRadius), roundingRadius, 1);

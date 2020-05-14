@@ -52,7 +52,7 @@ namespace GlassBuilder
         /// <summary>
         /// Вызов функции построения модели
         /// </summary>
-        /// <param name="glass"></param>
+        /// <param name="glass">входные параметры</param>
         public void BuildGlass(Parameters glass)
         {
             try
