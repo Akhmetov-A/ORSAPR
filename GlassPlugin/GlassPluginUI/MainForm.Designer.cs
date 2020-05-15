@@ -55,6 +55,7 @@
             this.RefreshButton = new System.Windows.Forms.Button();
             this.BuildButton = new System.Windows.Forms.Button();
             this.defaultBuildButton = new System.Windows.Forms.Button();
+            this.GlassComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // D1Label
@@ -291,8 +292,7 @@
             // 
             // RefreshButton
             // 
-            this.RefreshButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.RefreshButton.Location = new System.Drawing.Point(42, 259);
+            this.RefreshButton.Location = new System.Drawing.Point(207, 292);
             this.RefreshButton.Name = "RefreshButton";
             this.RefreshButton.Size = new System.Drawing.Size(100, 27);
             this.RefreshButton.TabIndex = 17;
@@ -302,8 +302,7 @@
             // 
             // BuildButton
             // 
-            this.BuildButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BuildButton.Location = new System.Drawing.Point(284, 259);
+            this.BuildButton.Location = new System.Drawing.Point(313, 292);
             this.BuildButton.Name = "BuildButton";
             this.BuildButton.Size = new System.Drawing.Size(100, 27);
             this.BuildButton.TabIndex = 18;
@@ -313,7 +312,7 @@
             // 
             // defaultBuildButton
             // 
-            this.defaultBuildButton.Location = new System.Drawing.Point(148, 259);
+            this.defaultBuildButton.Location = new System.Drawing.Point(96, 257);
             this.defaultBuildButton.Name = "defaultBuildButton";
             this.defaultBuildButton.Size = new System.Drawing.Size(130, 27);
             this.defaultBuildButton.TabIndex = 19;
@@ -321,11 +320,23 @@
             this.defaultBuildButton.UseVisualStyleBackColor = true;
             this.defaultBuildButton.Click += new System.EventHandler(this.defaultBuildButton_Click);
             // 
+            // GlassComboBox
+            // 
+            this.GlassComboBox.BackColor = System.Drawing.SystemColors.Window;
+            this.GlassComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GlassComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.GlassComboBox.Location = new System.Drawing.Point(232, 259);
+            this.GlassComboBox.Name = "GlassComboBox";
+            this.GlassComboBox.Size = new System.Drawing.Size(181, 24);
+            this.GlassComboBox.TabIndex = 20;
+            this.GlassComboBox.SelectedIndexChanged += new System.EventHandler(this.GlassComboBox_SelectedIndexChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 298);
+            this.ClientSize = new System.Drawing.Size(432, 333);
+            this.Controls.Add(this.GlassComboBox);
             this.Controls.Add(this.defaultBuildButton);
             this.Controls.Add(this.BuildButton);
             this.Controls.Add(this.RefreshButton);
@@ -353,8 +364,8 @@
             this.Controls.Add(this.D3Label);
             this.Controls.Add(this.D2Label);
             this.Controls.Add(this.D1Label);
-            this.MaximumSize = new System.Drawing.Size(450, 345);
-            this.MinimumSize = new System.Drawing.Size(450, 345);
+            this.MaximumSize = new System.Drawing.Size(450, 380);
+            this.MinimumSize = new System.Drawing.Size(450, 380);
             this.Name = "MainForm";
             this.ShowIcon = false;
             this.Text = "Рюмка";
@@ -392,6 +403,7 @@
         private System.Windows.Forms.Button RefreshButton;
         private System.Windows.Forms.Button BuildButton;
         private System.Windows.Forms.Button defaultBuildButton;
+        private System.Windows.Forms.ComboBox GlassComboBox;
     }
 }
 

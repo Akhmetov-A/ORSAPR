@@ -31,6 +31,15 @@ namespace GlassPluginUI
         public MainForm()
         {
             InitializeComponent();
+            List<string> glassName = new List<string>
+            {
+                "Своя",
+                "Рюмка для вина",
+                "Рюмка для шампанского",
+                "Рюмка для коньяка"
+            };
+            GlassComboBox.DataSource = glassName;
+            GlassComboBox.DisplayMember = "Своя";
         }
 
         private void D1TextBox_TextChanged(object sender, EventArgs e)
@@ -74,7 +83,7 @@ namespace GlassPluginUI
         }
 
         /// <summary>
-        /// Функция присаивания значений в полях
+        /// Функция присаивания значений в полях при вводе
         /// </summary>
         /// <param name="textBox">поле ввода</param>
         /// <param name="parameter">параметр</param>
@@ -100,22 +109,7 @@ namespace GlassPluginUI
         /// <param name="e"></param>
         private void defaultBuildButton_Click(object sender, EventArgs e)
         {
-            _parameters.StandDiameter = 150;
-            D1TextBox.Text = Convert.ToString(_parameters.StandDiameter);
-            _parameters.LegDiameter = 15;
-            D2TextBox.Text = Convert.ToString(_parameters.LegDiameter);
-            _parameters.RoundingDiameter = 15;
-            D3TextBox.Text = Convert.ToString(_parameters.RoundingDiameter);
-            _parameters.LegHeight = 100;
-            H1TextBox.Text = Convert.ToString(_parameters.LegHeight);
-            _parameters.GlassDiameter = 200;
-            D4TextBox.Text = Convert.ToString(_parameters.GlassDiameter);
-            _parameters.LowerGlassHeight = 100;
-            H2TextBox.Text = Convert.ToString(_parameters.LowerGlassHeight);
-            _parameters.GlassNeckDiameter = 150;
-            D5TextBox.Text = Convert.ToString(_parameters.GlassNeckDiameter);
-            _parameters.UpperGlassHeight = 100;
-            H3TextBox.Text = Convert.ToString(_parameters.UpperGlassHeight);
+            Assignment(150, 15, 15, 100, 200, 100, 150, 100);
         }
 
         /// <summary>
@@ -141,6 +135,7 @@ namespace GlassPluginUI
             D5TextBox.BackColor = Color.White;
             H3TextBox.Clear();
             H3TextBox.BackColor = Color.White;
+            GlassComboBox.SelectedItem = "Своя";
         }
 
         /// <summary>
@@ -167,6 +162,59 @@ namespace GlassPluginUI
             {
                 MessageBox.Show(ex.Message, "Неверный ввод данных");
             }
+        }
+
+        /// <summary>
+        /// Кнопка с выбором модели рюмок
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void GlassComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string name = (string)GlassComboBox.SelectedItem;
+            if (name=="Рюмка для вина")
+            {
+                Assignment(150, 15, 20, 200, 200, 100, 150, 100);
+            }
+            else if (name=="Рюмка для шампанского")
+            {
+                Assignment(100, 10, 30, 150, 120, 150, 100, 120);
+            }
+            else if (name=="Рюмка для коньяка")
+            {
+                Assignment(180, 20, 10, 100, 250, 100, 130, 150);
+            }
+        }
+
+        /// <summary>
+        /// Функция присваивания значений по нажатию кнопок
+        /// </summary>
+        /// <param name="d1">диаметр подставки</param>
+        /// <param name="d2">диаметр ножки</param>
+        /// <param name="d3">диаметр скругления</param>
+        /// <param name="h1">высота ножки</param>
+        /// <param name="d4">диаметр бокала</param>
+        /// <param name="h2">высота нижнего бокала</param>
+        /// <param name="d5">диаметр горлышка</param>
+        /// <param name="h3">высота верхнего бокала</param>
+        public void Assignment(int d1, int d2, int d3, int h1, int d4, int h2, int d5, int h3)
+        {
+            _parameters.StandDiameter = d1;
+            D1TextBox.Text = Convert.ToString(_parameters.StandDiameter);
+            _parameters.LegDiameter = d2;
+            D2TextBox.Text = Convert.ToString(_parameters.LegDiameter);
+            _parameters.RoundingDiameter = d3;
+            D3TextBox.Text = Convert.ToString(_parameters.RoundingDiameter);
+            _parameters.LegHeight = h1;
+            H1TextBox.Text = Convert.ToString(_parameters.LegHeight);
+            _parameters.GlassDiameter = d4;
+            D4TextBox.Text = Convert.ToString(_parameters.GlassDiameter);
+            _parameters.LowerGlassHeight = h2;
+            H2TextBox.Text = Convert.ToString(_parameters.LowerGlassHeight);
+            _parameters.GlassNeckDiameter = d5;
+            D5TextBox.Text = Convert.ToString(_parameters.GlassNeckDiameter);
+            _parameters.UpperGlassHeight = h3;
+            H3TextBox.Text = Convert.ToString(_parameters.UpperGlassHeight);
         }
     }
 }
