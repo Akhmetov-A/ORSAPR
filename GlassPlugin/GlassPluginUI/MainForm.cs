@@ -31,6 +31,15 @@ namespace GlassPluginUI
         public MainForm()
         {
             InitializeComponent();
+
+            //Привязка всех полей ввода к одному событию
+            foreach(Control c in Controls)
+            {
+                if (c is TextBox)
+                {
+                    c.TextChanged += new EventHandler(TextBoxChanged);
+                }
+            }
             List<string> glassName = new List<string>
             {
                 "Своя",
@@ -42,58 +51,18 @@ namespace GlassPluginUI
             GlassComboBox.DisplayMember = "Своя";
         }
 
-        private void D1TextBox_TextChanged(object sender, EventArgs e)
-        {
-            TextBoxChanged(D1TextBox, _parameters.StandDiameter);
-        }
-
-        private void D2TextBox_TextChanged(object sender, EventArgs e)
-        {
-            TextBoxChanged(D2TextBox, _parameters.LegDiameter);
-        }
-
-        private void D3TextBox_TextChanged(object sender, EventArgs e)
-        {
-            TextBoxChanged(D3TextBox, _parameters.RoundingDiameter);
-        }
-
-        private void H1TextBox_TextChanged(object sender, EventArgs e)
-        {
-            TextBoxChanged(H1TextBox, _parameters.LegHeight);
-        }
-
-        private void D4TextBox_TextChanged(object sender, EventArgs e)
-        {
-            TextBoxChanged(D4TextBox, _parameters.GlassDiameter);
-        }
-
-        private void H2TextBox_TextChanged(object sender, EventArgs e)
-        {
-            TextBoxChanged(H2TextBox, _parameters.LowerGlassHeight);
-        }
-
-        private void D5TextBox_TextChanged(object sender, EventArgs e)
-        {
-            TextBoxChanged(D5TextBox, _parameters.GlassNeckDiameter);
-        }
-
-        private void H3TextBox_TextChanged(object sender, EventArgs e)
-        {
-            TextBoxChanged(H3TextBox, _parameters.UpperGlassHeight);
-        }
-
         /// <summary>
-        /// Функция присаивания значений в полях при вводе
+        /// Обработчик полей для ввода
         /// </summary>
-        /// <param name="textBox">поле ввода</param>
-        /// <param name="parameter">параметр</param>
-        private void TextBoxChanged(TextBox textBox, int parameter)
-        {     
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextBoxChanged(object sender, EventArgs e)
+        {
+            var textBox = (TextBox)sender;
             try
             {
                 int data;
                 int.TryParse(textBox.Text, out data);
-                parameter = data;
                 textBox.BackColor = Color.White;
             }
             catch (Exception)
@@ -119,22 +88,14 @@ namespace GlassPluginUI
         /// <param name="e"></param>
         private void RefreshButton_Click(object sender, EventArgs e)
         {
-            D1TextBox.Clear();
-            D1TextBox.BackColor = Color.White;
-            D2TextBox.Clear();
-            D2TextBox.BackColor = Color.White;
-            D3TextBox.Clear();
-            D3TextBox.BackColor = Color.White;
-            H1TextBox.Clear();
-            H1TextBox.BackColor = Color.White;
-            D4TextBox.Clear();
-            D4TextBox.BackColor = Color.White;
-            H2TextBox.Clear();
-            H2TextBox.BackColor = Color.White;
-            D5TextBox.Clear();
-            D5TextBox.BackColor = Color.White;
-            H3TextBox.Clear();
-            H3TextBox.BackColor = Color.White;
+            foreach (Control c in Controls)
+            {
+                if (c is TextBox)
+                {
+                    c.Text = null;
+                    c.BackColor = Color.White;
+                }
+            }
             GlassComboBox.SelectedItem = "Своя";
         }
 
